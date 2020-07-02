@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: yellow;
+        }
+
+
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 29px;
+        }
+
+        h1 {
+            font-family: arial;
+        }
+
+        p {
+            font-family: arial;
+        }
+
+        #nome {
+            margin-bottom: 9px;
+            padding: 9px;
+            text-align: center;
+        }
+
+        #sobrenome {
+            margin-top: 9px;
+            padding: 9px;
+            text-align: center;
+        }
+
+        #text1 {
+            margin-top: 9px;
+            padding: 9px;
+            margin-top: 19px;
+            text-align: center;
+        }
+
+        #btn-verif {
+            margin-top: 19px;
+            margin-top: 9px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Sistema de Multas</h1>
+        <p>Velocidade máxima permitida é de 59 km/h.</p>
+        <input type="text" id="nome" placeholder="nome">
+        <input type="text" id="sobrenome" placeholder="sobrenome"><br />
+        A velocidade do seu carro é de:
+        <input type="Number" id="text1" placeholder="Informe a velocidade"> km/h
+        <input type="button" value="Verificar" id="btn-verif" onclick="calcular()">
+    </div>
+    <div id="res">
+
+    </div>
+
+    <script>
+        function calcular() {
+            var nome = window.document.querySelector('#nome').value;
+            var sobrenome = window.document.querySelector('#sobrenome').value;
+            var button = window.document.querySelector('#text1').value;
+            var res = window.document.querySelector('#res')
+            var resultado = Number(text1.value)
+            res.innerHTML = ` Senhor(a) ${nome.toUpperCase()} ${sobrenome.toUpperCase()}, sua velocidade atual é de ${resultado} km/h.`
+            if (resultado > 60) {
+                res.innerHTML += ` Você está MULTADO por excesso de velocidade.`
+            } else if (resultado <= 60) {
+                res.innerHTML += ` Dirija com ATENÇÃO e use sempre o cinto de segurança.`
+            }
+        }
+    </script>
+</body>
+
+</html>
